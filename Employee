@@ -1,0 +1,51 @@
+package github;
+
+interface Employee {
+    void work();
+    void attendMeeting();
+}
+
+class Developer implements Employee {
+    public void work() {
+        System.out.println("Writing code and fixing bugs.");
+    }
+
+    public void attendMeeting() {
+        System.out.println("Attending sprint planning meeting.");
+    }
+}
+
+class Manager implements Employee {
+    public void work() {
+        System.out.println("Managing projects and coordinating teams.");
+    }
+
+    public void attendMeeting() {
+        System.out.println("Attending management review meeting.");
+    }
+}
+
+class HR implements Employee {
+    public void work() {
+        System.out.println("Handling recruitment and employee welfare.");
+    }
+
+    public void attendMeeting() {
+        System.out.println("Attending HR policy meeting.");
+    }
+
+    public static void main(String[] args) {
+        Employee dev = new Developer();
+        Employee mgr = new Manager();
+        Employee hr = new HR();
+
+        dev.work();
+        dev.attendMeeting();
+
+        mgr.work();
+        mgr.attendMeeting();
+
+        hr.work();
+        hr.attendMeeting();
+    }
+}
