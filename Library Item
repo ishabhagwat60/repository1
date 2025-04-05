@@ -1,0 +1,52 @@
+package github;
+
+interface LibraryItem {
+    void displayInfo();
+    void borrowItem();
+}
+
+class Book implements LibraryItem {
+    private String title;
+
+    public Book(String title) {
+        this.title = title;
+    }
+
+    public void displayInfo() {
+        System.out.println("Book Title: " + title);
+    }
+
+    public void borrowItem() {
+        System.out.println("Book '" + title + "' has been borrowed.");
+    }
+}
+
+class Magazine implements LibraryItem {
+    private String issue;
+
+    public Magazine(String issue) {
+        this.issue = issue;
+    }
+
+    public void displayInfo() {
+        System.out.println("Magazine Issue: " + issue);
+    }
+
+    public void borrowItem() {
+        System.out.println("Magazine Issue '" + issue + "' has been borrowed.");
+    }
+}
+
+class Library {
+    public static void main(String[] args) {
+        LibraryItem book = new Book("The Great Gatsby");
+        LibraryItem magazine = new Magazine("Tech Today - March Edition");
+
+        book.displayInfo();
+        book.borrowItem();
+
+        magazine.displayInfo();
+        magazine.borrowItem();
+    }
+}
+
