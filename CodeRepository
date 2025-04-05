@@ -1,0 +1,48 @@
+package github;
+
+
+	abstract class CodeRepository {
+	    public abstract void commitCode();
+	    
+	    public void showRepositoryInfo() {
+	        System.out.println("This is a Code Repository for version control.");
+	    }
+	}
+
+	
+	class GitHubRepository extends CodeRepository {
+	    private String repositoryName;
+
+	    public GitHubRepository() {
+	        this.repositoryName = repositoryName;
+	    }
+
+	    public void commitCode() {
+	        System.out.println("Code committed to the GitHub repository: " + repositoryName);
+	    }
+	}
+
+	class GitLabRepository extends CodeRepository {
+	    private String repositoryName;
+
+	    public GitLabRepository() {
+	        this.repositoryName = repositoryName;
+	    }
+
+	    
+	    public void commitCode() {
+	        System.out.println("Code pushed to the GitLab repository: " + repositoryName);
+	    }
+	
+	    public static void main(String[] args) {
+	        CodeRepository github = new GitHubRepository();
+	        CodeRepository gitlab = new GitLabRepository();
+
+	        github.showRepositoryInfo();
+	        github.commitCode();
+
+	        gitlab.showRepositoryInfo();
+	        gitlab.commitCode();
+	    }
+	}
+
