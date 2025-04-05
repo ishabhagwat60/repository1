@@ -1,0 +1,41 @@
+package github;
+
+import java.util.Scanner;
+
+public class GuessTheWord {
+    public static void main(String[] args) {
+        String wordToGuess = "java";
+        StringBuilder hiddenWord = new StringBuilder("____");
+        Scanner scanner = new Scanner(System.in);
+        int attempts = 6;
+
+        System.out.println("Welcome to 'Guess the Word'!");
+        System.out.println("The word has " + wordToGuess.length() + " letters.");
+        System.out.println("You have " + attempts + " attempts to guess the word!");
+
+        while (attempts > 0 && hiddenWord.toString().contains("_")) {
+            System.out.print("Guess a letter: ");
+            char guess = scanner.next().charAt(0);
+
+            if (wordToGuess.indexOf(guess) != -1) {
+                for (int i = 0; i < wordToGuess.length(); i++) {
+                    if (wordToGuess.charAt(i) == guess) {
+                        hiddenWord.setCharAt(i, guess);
+                    }
+                }
+                System.out.println("Correct! " + hiddenWord);
+            } else {
+                attempts--;
+                System.out.println("Wrong guess. Attempts left: " + attempts);
+            }
+        }
+
+        if (hiddenWord.toString().equals(wordToGuess)) {
+            System.out.println("Congratulations! You guessed the word: " + wordToGuess);
+        } else {
+            System.out.println("Game over! The word was: " + wordToGuess);
+        }
+
+        scanner.close();
+    }
+}
