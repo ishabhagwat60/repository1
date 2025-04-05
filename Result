@@ -1,0 +1,35 @@
+package github;
+
+interface Result {
+    void displayResult();
+}
+
+class Student implements Result {
+    String name;
+     int marks;
+
+    public Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public void displayResult() {
+        System.out.print("Student: " + name + ", Marks: " + marks + ", Result: ");
+        if (marks >= 50) {
+            System.out.println("Pass");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+
+    public static void main(String[] args) {
+        Result student1 = new Student("Aditi", 95);
+        Result student2 = new Student("Rohan", 35);
+        Result student3 = new Student("Isha", 85);
+
+        student1.displayResult();
+        student2.displayResult();
+        student3.displayResult();
+    }
+}
+
