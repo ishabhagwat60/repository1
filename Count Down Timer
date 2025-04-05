@@ -1,0 +1,25 @@
+package github;
+
+import java.util.Scanner;
+
+public class CountDownTimer {
+	
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter countdown time in seconds: ");
+        int time = scanner.nextInt();
+
+        while (time > 0) {
+            System.out.println(time + " seconds remaining");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            time--;
+        }
+
+        System.out.println("Time's up!");
+        scanner.close();
+    }
+}
