@@ -1,0 +1,30 @@
+ackage github;
+
+public class GameScore {
+
+    private static int totalScore = 0;
+    private String playerName;
+
+    public GameScore(String playerName, int score) {
+        this.playerName = playerName;
+        totalScore += score;
+    }
+
+    public void displayScore() {
+        System.out.println(playerName + "'s Score: " + totalScore);
+    }
+
+    public static void displayTotalScore() {
+        System.out.println("Total Score in Game: " + totalScore);
+    }
+
+    public static void main(String[] args) {
+        GameScore player1 = new GameScore("	Isha", 150);
+        GameScore player2 = new GameScore("Tanisha", 200);
+
+        player1.displayScore();
+        player2.displayScore();
+
+        GameScore.displayTotalScore();
+    }
+}
