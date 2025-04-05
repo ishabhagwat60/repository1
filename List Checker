@@ -1,0 +1,21 @@
+package github;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ListChecker {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+        list.add("Date");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter item to check: ");
+        String item = sc.nextLine();
+
+        System.out.println(list.contains(item) ? item + " is in the list" : item + " is not in the list");
+        sc.close();
+    }
+}
