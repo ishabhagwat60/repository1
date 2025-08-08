@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main
+{
+    public final int max=4;
+    public int[] arr=new int[max];
+    public int Rear=-1;
+    public int Front=-1;
+    
+    public void enqueue(int data){
+        if(Rear==max-1){
+            System.out.println("Overflow");
+            return;
+        }
+    
+    Rear++;
+    arr[Rear]=data;
+    System.out.println("enque"+data);
+}
+    
+    public void dequeue(){
+        if(Rear==-1&&Front==-1){
+            System.out.println("Underflow");
+            return;
+        }
+    
+    Front++;
+    int deletedata=arr[Front];
+    System.out.println("deque"+deletedata);
+    }
+	public static void main(String[] args) {
+		Main q=new Main();
+		q.enqueue(10);
+		q.enqueue(20);
+		q.enqueue(30);
+		q.enqueue(40);
+		q.enqueue(50);
+		q.dequeue();
+		q.dequeue();
+		q.dequeue();
+		q.enqueue(10);
+		q.dequeue();
+		
+	}
+}
